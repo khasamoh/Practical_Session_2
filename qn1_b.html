@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question1_b</title>
+</head>
+<script>
+    
+</script>
+<style>
+    .img{
+        width:50px;
+        height: 43px;
+        border: 1px solid black;
+        background-image: url(menu.jpg);
+        background-repeat: no-repeat;
+    }
+    ul{
+        list-style-type: none;
+        padding: auto;
+        margin: auto;
+    }
+    li{
+        margin-top: 10px;
+    }
+    a{
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .menu{
+        width:fit-content;
+        padding: 5px 10px 5px 10px;
+        box-shadow: 3px 3px 2px 1px rgb(167, 208, 226);
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded',()=>{
+        let menu = document.querySelector('.menu');
+        let btn = document.querySelector('button');
+        btn.onclick = ()=>{
+            if(menu.style.display === "none"){
+                menu.style.display = "block";
+            }else{
+                menu.style.display = "none";
+            }
+             
+        }
+    });
+</script>
+<body>
+    <div class="container">
+        <button><img src="menu.jpg"></button>
+        <div class="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Resource</a></li>
+                <li><a href="#">Management</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Staff</a></li>
+                <li><a href="#">FQI</a></li>
+
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

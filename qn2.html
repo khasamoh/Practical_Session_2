@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question3</title>
+    <style>
+        .container{
+            width: 60%;
+            margin: auto;
+            border: 2px dashed rgba(255, 136, 0, 0.918);
+            border-radius: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+        p{
+            font-size: 18px;
+        }
+        input{
+            margin-bottom: 5px;
+        }
+        #submit{
+            margin-top: 7px;
+            width: 80px;
+            height: 30px;
+            background-color: green;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<script>
+    function score(){
+        let score=0;
+        let q1 = document.querySelector('input[name="q1"]:checked').value;
+        let q2 = document.querySelector('input[name="q2"]:checked').value;
+        let q3 = document.querySelector('input[name="q3"]:checked').value;
+        
+        if(q1 === "b") score++;
+        if(q2 === "c") score++;
+        if(q3 === "a") score++;
+    
+        alert(`you are scored ${score} out of 3
+                the correct answer for question1 (b)
+                the correct answer for question2 (c)
+                the correct answer for question3 (a)`);
+    
+    };
+</script>
+<body>
+    <div class="container">
+        <h1>ONLINE QUIZ SYSTEM</h1>
+        <form>
+            <p>1. What is HTML stand for:</p>
+            <input type="radio" name="q1" value="a"> a) Hypertext Language Law<br>
+            <input type="radio" name="q1" value="b"> b) Hypertext Markup Language<br>
+            <input type="radio" name="q1" value="c"> c) Hypertext Markup<br>
+            <input type="radio" name="q1" value="d"> d) No Answer<br>
+    
+            <p>2. CSS stand for what:</p>
+            <input type="radio" name="q2" value="a"> a) Cascading Sheets<br>
+            <input type="radio" name="q2" value="b"> b) Cascading Style System<br>
+            <input type="radio" name="q2" value="c"> c) Cascading Style Sheets<br>
+            <input type="radio" name="q2" value="d"> d) Cascading Style S<br>
+    
+            <p>3. What is JSON stand for</p>
+            <input type="radio" name="q3" value="a"> a) JavaScript Object Notation<br>
+            <input type="radio" name="q3" value="b"> b) JavaScript Notation<br>
+            <input type="radio" name="q3" value="c"> c) JavaScript Object Nation<br>
+            <input type="radio" name="q3" value="d"> d) JavaScript Object <br>
+    
+            <input type="button" onclick="score()" id="submit" value="Submit">
+        </form>
+        
+    </div>
+</body>
+</html>

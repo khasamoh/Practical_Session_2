@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question4</title>
+</head>
+<style>
+    .container{
+        width: 60%;
+        text-align: center;
+        margin: auto;
+    }
+    img{
+        width:100%;
+        height: 400px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded',()=>{
+        const image = document.querySelectorAll('img');
+        let currentIndex = 0;
+        image.forEach((image)=>{
+            image.style.display  = 'none';
+        })
+        setInterval(()=>{
+            for(let i = 0;i<image.length;i++){
+                image[i].style.display = 'none';
+            }
+            currentIndex++;
+            if (currentIndex > image.length) {
+                currentIndex = 1
+              }
+              image[currentIndex - 1].style.display = "block";
+        },3000);
+    });
+</script>
+<body>
+    <div class="container">
+        <div class="slider">
+            <img src="1.jpg" alt="">
+            <img src="2.jpg" alt="">
+            <img src="3.jpg" alt="">
+        </div>
+        <div class="clock">
+            <h1><span id="h">00</span>:<span id="m">00</span>:<span id="s">00</span></h1>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function clock(){
+        let h = document.querySelector('#h');
+        let m = document.querySelector('#m');
+        let s = document.querySelector('#s');
+        let hr = 0;
+        let mn = 0;
+        let sc = 0;
+    
+    setInterval(()=>{
+        s.innerHTML = sc;
+        sc++;
+        if(sc > 60){
+            sc = 0;
+            mn++;
+            m.innerHTML = mn;
+        }
+        if(mn > 60){
+            hr++;
+            h.innerHTML = hr
+            mn = 0;
+        }
+        if(hr > 12){
+            hr = 0;
+            mn = 0;
+            sc = 0;
+        }
+    },1000);
+    }
+    clock();
+</script>

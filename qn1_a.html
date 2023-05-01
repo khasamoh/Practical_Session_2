@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question1_a</title>
+</head>
+<script>
+    function textChange() {
+        let p = document.querySelector('p');
+        p.innerHTML = 'Nimechange';
+        p.style.color = 'red';
+        p.style.fontSize = '50px'
+    }
+    function textChange2() {
+        let p = document.querySelector('p');
+        p.innerHTML = 'Nimechange Tena';
+        p.style.color = 'blue';
+        p.style.fontSize = '70px'
+    }
+    document.addEventListener('DOMContentLoaded',()=>{
+        setTimeout(textChange, 3000);
+        setInterval(textChange2, 6000);
+    });
+</script>
+<body>
+    <p>Hellow World</p>
+
+</body>
+</html>

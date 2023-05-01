@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question3</title>
+</head>
+<style>
+    .container{
+        width: 30%;
+        border: 2px dashed rgba(255, 136, 0, 0.918);
+        border-radius: 13px;
+        text-align: center;
+        margin: auto;
+    }
+    input{
+        height: 30px;
+        padding-left: 7px;
+    }
+    #result{
+        width: 25%;
+    }
+    button{
+        height: 50px;
+        background-color: blue;
+        color: white;
+        font-size: 30px;
+        width: 50px;
+        margin-bottom: 5px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded',()=>{
+        document.querySelectorAll('button').forEach((button)=>{
+            let n1 = document.querySelector('#num1');
+            let n2 = document.querySelector('#num2');
+            let rst = document.querySelector('#result');
+            button.onclick = ()=>{
+                if(button.innerHTML === "+"){
+                    rst.value = Number(n1.value) + Number(n2.value);
+                }else if(button.innerHTML === "-"){
+                    rst.value = Number(n1.value) - Number(n2.value);
+                }
+                else if(button.innerHTML === "*"){
+                    rst.value = Number(n1.value) * Number(n2.value);
+                }
+                else if(button.innerHTML === "/"){
+                    if(Number(n2.value) == 0){
+                        alert('Sorry cant divide number by Zore(0) please try again');
+                    }else{
+                        rst.value = Number(n1.value) / Number(n2.value);
+                    }
+                }
+                else if(button.innerHTML === "%"){
+                    rst.value = Number(n1.value) % Number(n2.value);
+                }
+            }
+
+        });
+    });
+</script>
+<body>
+    <div class="container">
+        <h2>JavaScript Calculator</h2>
+        <Label>First Number:</Label>
+        <input type="number" id="num1" required placeholder="Enter first no"><br><br>
+        <Label>Second Number:</Label>
+        <input type="number" id="num2" required placeholder="Enter Second no"><br><br>
+        <Label>Result:</Label>
+        <input type="number" id="result" readonly placeholder="Result"><br><br>
+
+        <button id="btnAdd">+</button>
+        <button id="btnSub">-</button>
+        <button id="btnMult">*</button>
+        <button id="btnDiv">/</button>
+        <button id="btnMod">%</button>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question1_c</title>
+</head>
+<script>
+    function move(){
+       let img = document.querySelector('img');
+       if(img.style.float === 'right'){
+        img.style.float = 'left';
+        document.querySelector('button').innerHTML = 'Click to Move';
+       }else{
+        img.style.float = 'right';
+        document.querySelector('button').innerHTML = 'Back';
+       }
+        
+    }
+    function mouseOver(){
+        let img = document.querySelector('img');
+        img.style.height = "400px";
+        img.style.width = "360px";
+     }
+     function mouseOut(){
+        let img = document.querySelector('img');
+        img.style.height = "300px";
+        img.style.width = "300px";
+     }
+</script>
+<body>
+    <button onclick="move()">Click to Move</button><br>
+    <img src="img.gif" height="300px" width="300px" onmouseover="mouseOver()" onmouseout="mouseOut()">
+</body>
+</html>
